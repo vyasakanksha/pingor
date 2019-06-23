@@ -2,4 +2,4 @@
 
 Ping Pong Ball Tracker
 
-![](https://j.gifs.com/6Xm50R.gif)
+![Demo](https://j.gifs.com/6Xm50R.gif)
