@@ -1,4 +1,6 @@
 import cv2
+import imutils
+import random
 
 PI = 3.14159
 
@@ -20,8 +22,8 @@ def countcircles(img,colorLower,colorUpper,MINLENGTH=300):
     hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)  
     mask = cv2.inRange(hsv, colorLower, colorUpper) 
 
-    _,contours,_ = cv2.findContours(mask.copy(), cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)
-#     contours = imutils.grab_contours(contours)
+    contours = cv2.findContours(mask.copy(), cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)
+    contours = imutils.grab_contours(contours)
     pmax = 10000
     pmin = MINLENGTH
 
