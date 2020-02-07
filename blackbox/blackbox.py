@@ -11,8 +11,12 @@ def circularity(c):
     
 def detectcircle(c):
     M = cv2.moments(c)
-    circularity = 1/(2*PI) * M['m00']**2/(M['mu20']+M['mu02'])
-    return circularity > 0.95
+    denominator = (M['mu20']+M['mu02'])
+    if denominator > 0:
+        circularity = 1/(2*PI) * M['m00']**2/(M['mu20']+M['mu02'])
+        return circularity > 0.95
+    else:
+        return False
     
 def countcircles(img,colorLower,colorUpper,MINLENGTH=300):
     # blur to remove noise
