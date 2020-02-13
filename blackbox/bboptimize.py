@@ -23,7 +23,7 @@ def myoptimizer():
         v21 = v11 + vdiff
         for i in range(0,255,65):
             v12 = random.randint(0+i,65+i)
-            s = blackboxscore(flist,(v11, v12, 0),(v21, 255, 255),sample=20)
+            s = blackboxscore(flist,(v11, v12, 0),(v21, 255, 255),sample=-1)
             if s > 0:
                 print(s, v11, v12, 0, v21, 255,255)
                 if s in scores.keys():
